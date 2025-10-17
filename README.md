@@ -1,38 +1,15 @@
-# sv
+# dockerized-sveltekit-app
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+### This is the first docker image I created myself 🥳🎉
+This project is a simple static site made with Bun and SvelteKit. I wrote a simple Dockerfile that sets up dependencies, builds the project and runs it with nginx.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+First build the image:
+```bash
+docker build -t username/dockerized-sveltekit-app .
+```
+Then run the container:
+```bash
+docker run -d -p 8000:80 username/dockerized-sveltekit-app
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Finally, access the site through `http://localhost:8000`.
